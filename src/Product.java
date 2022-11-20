@@ -48,7 +48,7 @@ public class Product {
     }
 
     public void setChecked() {
-        this.checked = checked;
+        this.checked = true;
     }
 
 
