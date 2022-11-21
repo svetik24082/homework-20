@@ -14,7 +14,7 @@ public class RecipeList {
         return stringBuilder.toString();
     }
 
-    public void addRecipe(Recipe recipe) {
+    public void addRecipe(Recipe recipe, Product product) {
         if (recipes.contains(recipe)) {
             throw new IllegalArgumentException(" Такой рецепт уже существует");
         } else {

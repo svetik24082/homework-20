@@ -1,19 +1,31 @@
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class Recipe {
     private final String name;
-    private final Set<Product> products;
+    private  Set<Product> products;
 
 
-    public Recipe(String name, Set<Product> products) {
-        if (name == null || name.isBlank() || products == null || products.size() == 0) {
+    public Recipe(String name){//, Set<Product> products) {
+        if (name == null || name.isBlank()){  // || products == null || products.size() == 0) {
             throw new IllegalArgumentException(" Есть пустые поля");
         }
         this.name = name;
         this.products = products;
+        products= new HashSet<>();
 
     }
+
+    //public Recipe(String nameProducts, double price, double quantity, String name) {
+       // super(nameProducts, price, quantity);
+        //if (name == null || name.isBlank()) {  // || products == null || products.size() == 0) {
+           // throw new IllegalArgumentException(" Есть пустые поля");
+       // }
+
+        //this.name = name;
+    //}
+
     public String getName() {
         return name;
     }
@@ -52,6 +64,6 @@ public class Recipe {
     public String toString() {
 
         return String.format(" Название рецепта" + name + '\'' +
-                "продукты " + products);
+                "продукты " +products);
     }
 }

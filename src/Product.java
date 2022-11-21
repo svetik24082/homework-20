@@ -73,7 +73,7 @@ public class Product {
     public String toString() {
         String checkedString = this.isChecked() ? "Да" : "Нет";
         return String.format(this.nameProducts + " , Цена " + this.price + " , " +
-                "количество" + this.quantity + " , куплен");
+                "количество" + this.quantity + " , куплен "  + checkedString);
     }
 
 }
