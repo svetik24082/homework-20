@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class Passport {
     private final int number;
-    private final  String lastName;
-    private final  String name;
-    private final  String middleName;
+    private final String lastName;
+    private final String name;
+    private final String middleName;
     private final LocalDate localDate;
 
     public Passport(int number, String lastName, String name,
@@ -40,27 +40,30 @@ public class Passport {
         return localDate;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass())
             return false;
         Passport passport = (Passport) o;
-        return number == passport.number ;
+        return number == passport.number;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(number);
+
     }
+
 
     @Override
     public String toString() {
         return
-                "номер=" + number +
-                ", Фамилия =" + lastName  +
-                ", Имя=" + name  +
-                ", Отчество=" + middleName  +
-                ", дата =" + localDate ;
+                "номер= " + number +
+                        ", Фамилия = " + lastName +
+                        ", Имя=" + name +
+                        ", Отчество= " + middleName +
+                        ", дата рождения  = " + localDate;
     }
 }

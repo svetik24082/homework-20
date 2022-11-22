@@ -1,3 +1,4 @@
+
 import pasport.Passport;
 import pasport.PassportList;
 
@@ -7,7 +8,6 @@ import java.util.*;
 import static java.util.List.of;
 
 public class Main {
-
 
     public static void main(String[] args) {
         Product sugar = new Product(" Сахар", 90.0, 1.0);
@@ -36,20 +36,29 @@ public class Main {
         set.add(task2);
         System.out.println(set);
 
+        HashMap<Integer, String> passportsAndNames = new HashMap<>();
 
-        Passport ivanov = new Passport(123456789, "Иванов", "Иван", "Иванович", LocalDate.now());
-        Passport petrov = new Passport(256984215, "Петров", "Иван", "Иванович", LocalDate.now());
-        Passport sydorov = new Passport(598745632, "Сидоров", "Иван", "Иванович", LocalDate.now());
-        Passport sydorov2 = new Passport(598745632, "Сидор", "Иван", "Иванович", LocalDate.now());
 
-        // System.out.println(ivanov);
+        Passport ivanov = new Passport(123456789, "Иванов", "Иван", "Иванович", LocalDate.of(1985, 3, 28));
+        Passport petrov = new Passport(223456789, "Петров", "Иван", "Иванович", LocalDate.of(1987, 12, 25));
+        Passport sydorov2 = new Passport(323456789, "Сидоров", "Иван", "Иванович", LocalDate.of(1960, 11, 19));
+        Passport sydorov = new Passport(223456789, "Васильев", "Иван", "Иванович", LocalDate.of(1960, 11, 19));
+
+        passportsAndNames.put(123456789, " Иванов Иван Иванович");
+        passportsAndNames.put(223456789, " Петров Иван Иванович");
+        passportsAndNames.put(323456789, " Сидоров Иван Иванович");
+        passportsAndNames.put(223456789, " Васильев Иван Иванович");
+        System.out.println(passportsAndNames);
+        for (Map.Entry entry : passportsAndNames.entrySet()) {
+            System.out.println(entry);
+        }
+
         PassportList passportList = new PassportList();
-        passportList.addOrUpdatePassport(ivanov);
-        System.out.println();
-        passportList.addOrUpdatePassport(petrov);
-        passportList.addOrUpdatePassport(sydorov);
-        passportList.addOrUpdatePassport(sydorov2);
-        passportList.findByNumber(sydorov2.getNumber());
+        passportList.addPassport(ivanov);
+        passportList.addPassport(petrov);
+        passportList.addPassport(sydorov);
+        passportList.addPassport(sydorov2);
+        passportList.findByNumber(ivanov.getNumber());
 
         System.out.println(passportList);
 
